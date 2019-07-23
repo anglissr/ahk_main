@@ -15,13 +15,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; 	G6 -> [CTRL SHIFT 6]
 
 
+
+
 ;------------------------------------------------------------------------
 ; Script/AHK initialization
 ;------------------------------------------------------------------------
 ^!a::edit %A_ScriptName%			; Open current script in editor
 ^!+a::run explorer.exe %A_ScriptDir%		; Open the current script's path
-
-
 
 
 
@@ -32,7 +32,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 !9::hue("mood")
 !8::hue("off")
 
-hue(event) { ;using iftt maker api with given event
+hue(event) { ;using ifttt maker api with given event
 url :=  "https://maker.ifttt.com/trigger/" . event . "/with/key/ivp0CU0DOmQdjAcpFHMFpWekt04ns-U6k8HTTW-AFBa"
 URLDownloadToFile, %url%, hueAPI
 }
